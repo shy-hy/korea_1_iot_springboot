@@ -59,10 +59,10 @@ public class StudentController {
     }
 
     // 5) 학생 정보 삭제 (DELETE) - 특정 ID의 학생 정보를 삭제
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
-//        studentService.deleteStudent(id);
-//        return ResponseEntity.noContent().build();
-//        // : HTTP 상태 코드의 204 No Content를 반환: 본문 없이 응답을 완료시킴
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return ResponseEntity.noContent().build();
+        // : HTTP 상태 코드의 204 No Content를 반환: 본문 없이 응답을 완료시킴
+    }
 }

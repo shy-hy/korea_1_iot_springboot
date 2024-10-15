@@ -115,6 +115,25 @@ public class StudentService {
             );
         }
     }
+
+    // 5) 특정 ID 학생 삭제
+    public void deleteStudent(Long id) {
+        try {
+            // 삭제할 학생 데이터를 ID로 조회
+            Student student = studentRepository.findById(id)
+                    .orElseThrow(() ->
+                            new Error("Student not found with id" + id)
+                    );
+            // 조회한 학생 객체를 DB에서 삭제
+            studentRepository.delete(student);
+
+        } catch(Exception e) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Error occurred while deleting student", e
+            );
+        }
+    }
 }
 
 
