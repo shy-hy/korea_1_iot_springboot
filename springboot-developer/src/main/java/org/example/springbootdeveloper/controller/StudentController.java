@@ -29,6 +29,7 @@ public class StudentController {
     // 1) 학생 목록 조회 (GET) - 모든 학생 목록 반환
     @GetMapping // HTTP GET 요청을 처리 "/api/students" 경로에 매핑
     public List<StudentDto> getAllStudents() {
+
         return studentService.getAllStudents();
     }
 
